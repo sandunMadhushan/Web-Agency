@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Welcome | Maddy Solutions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+<link rel="stylesheet" href="./css/reviews.css" />
+
+<script type = "text/javascript">
+
+<!-- simple alert function -->
+function allertBtn() {  
+
+alert("There is nothing to see here. Keep browsing! ;-)");
+
+        }
+
+</script>
+
+</head>
+<body id="top">
+
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay light" style="background-image:url('images/background1.jpg');"> 
+  
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear"> 
+      
+      <ul class="nospace">
+        <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
+        <li><a href="#" title="Call Us"><i class="fa fa-phone"></i></a></li>
+        <li><a href="#" title="Send a Mail"><i class="fa fa-envelope-o"></i></a></li>
+      </ul>
+      
+    </div>
+  </div>
+  
+  
+  
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      
+      <div id="logo" class="fl_left">
+        <h1><a href="index.html">Maddy Solutions</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a class="drop" href="services.html">Services</a>
+            <ul>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Software Development</a></li>
+              <li><a href="#">Mobile App Design</a></li>
+              <li><a href="#">SEO</a></li>
+              <li><a href="#">Video Animation</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="works.html">Recent Works</a>
+            <ul>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Software Development</a></li>
+              <li><a href="#">Mobile App Design</a></li>
+              <li><a href="#">SEO</a></li>
+              <li><a href="#">Video Animation</a></li>
+            </ul>
+          </li>   
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </nav>
+      
+    </header>
+  </div>
+  
+  
+  
+  <div id="pageintro" class="hoc clear"> 
+    
+    <article>
+      <p>WE DESIGN AND DEVELOP</p>
+      <h3 class="heading">CREATIVE WEBSITES/ SOFTWARE SOLUTIONS & Mobile Apps</h3>
+      <footer>
+        <ul class="nospace inline pushright">
+          <li><a class="btn" href="works.html">Recent Works</a></li>
+          <li><a class="btn inverse" href="contact.html">Request a Quote</a></li>
+        </ul>
+      </footer>
+    </article>
+    
+  </div>
+  
+</div>
+<!-- End Top Background Image Wrapper -->
+
+
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    
+
+    <div id="customer-reviews">
+      <h2>Clients Reviews</h2>
+
+      <div class="review-container">
+        <div
+          v-for="(review, index) in featuredReviews"
+          :key="review.name"
+          class="review-card review-card--featured"
+        >
+          <p><strong>{{ review.name }}</strong> says:</p>
+          <p>{{ review.comment }}</p>
+          <p>Rating: {{ review.rating }}/5</p>
+        </div>
+      </div>
+
+      <div class="review-container">
+        <div
+          v-for="(review, index) in remainingReviews"
+          :key="review.name"
+          class="review-card"
+        >
+          <p><strong>{{ review.name }}</strong> says:</p>
+          <p>{{ review.comment }}</p>
+          <p>Rating: {{ review.rating }}/5</p>
+        </div>
+      </div>
+
+      <form @submit.prevent="addReview">
+        <label for="name">Name:</label>
+        <input type="text" id="name" v-model="newReview.name" />
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" v-model="newReview.comment"></textarea>
+
+        <label for="rating">Rating:</label>
+        <select id="rating" v-model="newReview.rating">
+          <option value="">Select a rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <button type="submit">Submit Review</button>
+      </form>
+    </div>
+
+
+
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    
+    <article class="one_quarter first">
+      <h6 class="heading">About us</h6>
+      <p>Maddy Solutions is a Multi-National Website design, Mobile App development & Software development company having its representative offices in Sri Lanka, established in 2010.</p>
+      <p class="nospace"><a href="#">Read More</a></p>
+    </article>
+    <div class="one_quarter">
+      <h6 class="heading">Find us</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Clock Tower, Kandy, Sri Lanka
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +94 (71) 234 5678</li>
+        <li><i class="fa fa-envelope-o"></i> info@maddysolutions.com</li>
+      </ul>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="https://www.facebook.com/maddysolutions"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="https://www.twitter.com/maddysolutions"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-linkedin" href="https://www.linkedin.com/maddysolutions"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="heading">Find about more</h6>
+      <ul class="nospace linklist">
+        <li><a href="./about.html">About us</a></li>
+        <li><a href="./works.html">Recent Works</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./contact.html">Request a Quote</a></li>
+        <li><a href="./contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="heading">Quick Links</h6>
+      <ul class="nospace linklist">
+        <li><a href="./index.html">Maddy Solutions</a></li>
+        <li><a href="#">WebDevelopers Team</a></li>
+        <li><a href="#">Zata Developers</a></li>
+        <li><a href="#">Zata Work</a></li>
+        <li><a href="#">Sharp Solutions</a></li>
+      </ul>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    
+    <p class="fl_left">Copyright &copy; 2023 - All Rights Reserved - <a href="#">Maddy Solutions</a></p>
+    
+  </div>
+</div>
+    <script>
+      new Vue({
+        el: "#customer-reviews",
+        data: {
+          reviews: [
+            { name: "Dimantha Weerakoon", comment: "Very satisfied about the team of developers. They fullfill my expectations well…", rating: 5 },
+            {
+              name: "Imalka Shehan",
+              comment: "I am satisfied with the quality.",
+              rating: 5,
+            },
+            {
+              name: "Pasindu",
+              comment: "Team Helped me lot to grow my bussiness. Higherly Recomended.…",
+              rating: 5,
+            },
+            {
+              name: "Ishan Bandara",
+              comment:
+                "The web was okay, but the customer service was great.",
+              rating: 3,
+            },
+            {
+              name: "Nimantha Dilshan",
+              comment: "Super & Fast Service. Thanks.",
+              rating: 5,
+            },
+          ],
+          newReview: { name: "", comment: "", rating: "" },
+        },
+        computed: {
+          featuredReviews: function () {
+            return this.reviews.slice(0, 2);
+          },
+          remainingReviews: function () {
+            return this.reviews.slice(2);
+          },
+        },
+
+        methods: {
+          addReview: function () {
+            if (
+              this.newReview.name &&
+              this.newReview.comment &&
+              this.newReview.rating
+            ) {
+              this.reviews.push({
+                name: this.newReview.name,
+                comment: this.newReview.comment,
+                rating: this.newReview.rating,
+              });
+              this.newReview.name = "";
+              this.newReview.comment = "";
+              this.newReview.rating = "";
+            } else {
+              alert("Please fill out all fields.");
+            }
+          },
+        },
+      });
+    </script>
+</body>
+</html>

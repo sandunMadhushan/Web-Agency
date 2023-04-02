@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
-<title>Welcome | DilshanSoftLab</title>
+<title>Welcome | Maddy Solutions</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
@@ -9,7 +9,7 @@
 <body id="top">
 
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay light" style="background-image:url('images/background1.jpg');"> 
+<div class="bgded overlay light" style="background-image:url('images/background1.jpg'); position: relative; z-index: 1;"> 
   
   <div class="wrapper row0">
     <div id="topbar" class="hoc clear"> 
@@ -18,8 +18,6 @@
         <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>
         <li><a href="#" title="Call Us"><i class="fa fa-phone"></i></a></li>
         <li><a href="#" title="Send a Mail"><i class="fa fa-envelope-o"></i></a></li>
-        <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
-        <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
       </ul>
       
     </div>
@@ -31,7 +29,7 @@
     <header id="header" class="hoc clear"> 
       
       <div id="logo" class="fl_left">
-        <h1><a href="index.html">DilshanSoftLab</a></h1>
+        <h1><a href="index.html">Maddy Solutions</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
@@ -39,18 +37,18 @@
           <li><a href="about.html">About us</a></li>
           <li><a class="drop" href="services.html">Services</a>
             <ul>
-              <li><a href="#">Web Develop</a></li>
-              <li><a href="#">Software Develop</a></li>
-              <li><a href="#">Mobile App Desin</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Software Development</a></li>
+              <li><a href="#">Mobile App Design</a></li>
               <li><a href="#">SEO</a></li>
               <li><a href="#">Video Animation</a></li>
             </ul>
           </li>
           <li><a class="drop" href="works.html">Recent Works</a>
             <ul>
-              <li><a href="#">Web Develop</a></li>
-              <li><a href="#">Software Develop</a></li>
-              <li><a href="#">Mobile App Desin</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Software Development</a></li>
+              <li><a href="#">Mobile App Design</a></li>
               <li><a href="#">SEO</a></li>
               <li><a href="#">Video Animation</a></li>
             </ul>
@@ -71,7 +69,7 @@
       <h3 class="heading">CREATIVE WEBSITES/ SOFTWARE SOLUTIONS & Mobile Apps</h3>
       <footer>
         <ul class="nospace inline pushright">
-          <li><a class="btn" href="works.html">Recent Work</a></li>
+          <li><a class="btn" href="works.html">Recent Works</a></li>
           <li><a class="btn inverse" href="contact.html">Request a Quote</a></li>
         </ul>
       </footer>
@@ -93,7 +91,7 @@
       <p>Feel Free to contact us...</p>
     </div>
     <h2>Request a Quote</h2>
-        <form action="#" method="post">
+        <form onsubmit="return false" id="my_form">
           <div class="one_third first">
             <label for="name">Name <span>*</span></label>
             <input type="text" name="name" id="name" value="" size="22" required style="padding: 5px;">
@@ -108,18 +106,43 @@
           </div>
           <div class="block clear">
             <br>
-            <label for="comment">Your Message</label>
-            <textarea name="comment" id="comment" cols="108" rows="10"></textarea>
+            <label for="comment">Your Message <span>*</span></label>
+            <textarea name="comment" id="comment" cols="108" rows="10" required style="padding: 5px;"></textarea>
           </div>
-          <div>
-            <br>
-            <input type="submit" name="submit" value="Submit" style="padding: 10px; background-color:#CF9C67; border: none; color: #000">
+          <br> 
+          <div> <input type="submit" value="Submit" name="submit" style="cursor: pointer; padding: 10px; background-color:#CF9C67; border: none; color: #000;" onclick="openPopup()">
+          </div>
+          <div class="popup" id="popup" style="position: fixed; z-index: 2;">
+              <img src="./images/404-tick.png" >
+              <h2>Thank You!</h2>
+              <p>Your details has been successfully submitted. Thank you!</p>
+              <button type="button" onclick="closePopup()">OK</button>
           </div>
         </form>
     <!-- / main body -->
     <div class="clear"></div>
   </main>
 </div>
+
+<script>
+  let popup = document.getElementById("popup");
+  const form = document.getElementById("my_form")
+
+  function openPopup() {
+    popup.classList.add("open-popup")
+    window.scrollTo(0, 0)
+    var getValue= document.getElementById("name");
+  }
+    function closePopup() {
+    popup.classList.remove("open-popup")
+  }
+
+  form.addEventListener('submit', function handleSubmit(event) { 
+    event.preventDefault();
+    form.reset();
+  } );
+</script>
+
 <table border="0">
   <tr>
     <td width="500px;"><div class="map"  style="margin-left: 200px">
@@ -134,7 +157,7 @@
           </address>
         </li>
         <li><i class="fa fa-phone"></i> <br>+94 (71) 234 5678 <br><br> </li>
-        <li><i class="fa fa-envelope-o"></i> <br>info@dilshansoftlab.com</li>
+        <li><i class="fa fa-envelope-o"></i> <br>info@maddysolutions.com</li>
       </ul>
       <ul class="faico clear">
         <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -156,7 +179,7 @@
       <h6 class="heading">Subscribe to our Newsletter</h6>
       <p>Keep in touch with us for new updates. Put your email below.</p>
     </div>
-    <form method="post" action="#">
+    <form>
       <fieldset>
         <legend>Newsletter:</legend>
         <input class="btmspace-15" type="text" value="" placeholder="Enter Your Email Here&hellip;">
@@ -171,7 +194,7 @@
     
     <article class="one_quarter first">
       <h6 class="heading">About us</h6>
-      <p>DilshanSoftLab is a Multi-National Website design, Mobile App development & Software development company having its representative offices in CA-USA, New Zealand, Oman & Sri Lanka, established in 2010.</p>
+      <p>Maddy Solutions is a Multi-National Website design, Mobile App development & Software development company having its representative offices in Sri Lanka, established in 2010.</p>
       <p class="nospace"><a href="#">Read More</a></p>
     </article>
     <div class="one_quarter">
@@ -183,28 +206,28 @@
           </address>
         </li>
         <li><i class="fa fa-phone"></i> +94 (71) 234 5678</li>
-        <li><i class="fa fa-envelope-o"></i> info@dilshansoftlab.com</li>
+        <li><i class="fa fa-envelope-o"></i> info@maddysolutions.com</li>
       </ul>
       <ul class="faico clear">
-        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-facebook" href="https://www.facebook.com/maddysolutions"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="https://www.twitter.com/maddysolutions"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-linkedin" href="https://www.linkedin.com/maddysolutions"><i class="fa fa-linkedin"></i></a></li>
       </ul>
     </div>
     <div class="one_quarter">
       <h6 class="heading">Find about more</h6>
       <ul class="nospace linklist">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Recent Works</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Request a Quote</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li><a href="./about.html">About us</a></li>
+        <li><a href="./works.html">Recent Works</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./contact.html">Request a Quote</a></li>
+        <li><a href="./contact.html">Contact us</a></li>
       </ul>
     </div>
     <div class="one_quarter">
       <h6 class="heading">Quick Links</h6>
       <ul class="nospace linklist">
-        <li><a href="#">DilshanSoftLab</a></li>
+        <li><a href="./index.html">Maddy Solutions</a></li>
         <li><a href="#">WebDevelopers Team</a></li>
         <li><a href="#">Zata Developers</a></li>
         <li><a href="#">Zata Work</a></li>
@@ -220,9 +243,28 @@
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     
-    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">DilshanSoftLab</a></p>
+    <p class="fl_left">Copyright &copy; 2023 - All Rights Reserved - <a href="#">Maddy Solutions</a></p>
     
   </div>
 </div>
+
+<!-- <div class="popup" id="popup">
+  <img src="./images/404-tick.png" >
+  <h2>Thank You!</h2>
+  <p>Your details has been successfully submitted. Thank you!</p>
+  <button type="button" onclick="closePopup()">OK</button>
+
+</div> -->
+<!-- <script>
+  let popup = document.getElementById("popup");
+
+  function openPopup() {
+    popup.classList.add("open-popup")
+  }
+    function closePopup() {
+    popup.classList.remove("open-popup")
+  }
+</script> -->
+
 </body>
 </html>
