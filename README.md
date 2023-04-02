@@ -1,3 +1,3 @@
-# DSL-Web
+# Web Agency
 
 https://sandunmadhushan.github.io/Web-Agency/
